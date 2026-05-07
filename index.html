@@ -51,6 +51,37 @@
             letter-spacing: -0.5px;
         }
 
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .header-cart {
+            position: relative;
+            cursor: pointer;
+            color: #b45f4b;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .cart-count-badge {
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            position: absolute;
+            top: -8px;
+            right: -12px;
+        }
+
         .nav-links {
             display: flex;
             gap: 2.5rem;
@@ -72,7 +103,7 @@
         /* HERO SECTION */
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('img/donas.jpg.jpeg') center/cover no-repeat;
-            min-height: 80vh;
+            min-height: 70vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -144,6 +175,9 @@
             box-shadow: 0 15px 35px -10px rgba(90, 60, 50, 0.15);
             transition: all 0.3s ease;
             border: 1px solid #ffe8dc;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .card:hover {
@@ -152,18 +186,21 @@
         }
 
         .card-img {
-            height: 260px;
+            height: 220px;
             background-size: cover;
             background-position: center;
         }
 
         .card-content {
             padding: 1.8rem 1.5rem 2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .card-content h3 {
-            font-size: 1.8rem;
-            font-weight: 500;
+            font-size: 1.5rem;
+            font-weight: 600;
             margin-bottom: 0.5rem;
             color: #3a2823;
         }
@@ -171,21 +208,21 @@
         .card-content p {
             color: #6b4f44;
             margin-bottom: 1rem;
+            font-size: 0.9rem;
         }
 
         .precio {
-            font-size: 1.7rem;
-            font-weight: 600;
+            font-size: 1.5rem;
+            font-weight: 700;
             color: #b45f4b;
             font-family: 'Playfair Display', serif;
         }
 
-        /* NUEVO: Controles de cantidad en las cards */
         .price-cart-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 1rem;
+            margin-top: auto;
             flex-wrap: wrap;
             gap: 0.8rem;
         }
@@ -193,9 +230,9 @@
         .cart-controls {
             display: flex;
             align-items: center;
-            gap: 0.8rem;
+            gap: 0.5rem;
             background: #fef5ef;
-            padding: 0.3rem 0.8rem;
+            padding: 0.3rem 0.6rem;
             border-radius: 3rem;
             border: 1px solid #f0d9cc;
         }
@@ -221,12 +258,20 @@
             transform: scale(1.05);
         }
 
-        .qty-display {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #3a2823;
-            min-width: 30px;
+        .qty-input {
+            width: 55px;
             text-align: center;
+            border: 1px solid #f0d9cc;
+            border-radius: 2rem;
+            padding: 0.3rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            background: white;
+        }
+
+        .qty-input:focus {
+            outline: none;
+            border-color: #b45f4b;
         }
 
         /* SOBRE NOSOTROS */
@@ -252,13 +297,13 @@
         }
 
         .about-text p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #5e4035;
         }
 
         .about-img {
             flex: 1 1 300px;
-            height: 350px;
+            height: 300px;
             background: url('img/logo.jpeg') center/cover no-repeat;
             border-radius: 2rem;
             box-shadow: 0 20px 30px -5px #d9c2b1;
@@ -315,7 +360,6 @@
             font-weight: 600;
             color: #5e4035;
             margin-bottom: 0.5rem;
-            letter-spacing: 0.3px;
         }
 
         .form-input,
@@ -356,19 +400,17 @@
             font-family: 'Playfair Display', serif;
             width: 100%;
             margin-top: 1rem;
-            border: 2px solid transparent;
         }
 
         .form-button:hover {
             background-color: #9a4f3d;
             transform: translateY(-2px);
-            box-shadow: 0 15px 30px -8px #b45f4b;
         }
 
         .contact-info {
             display: flex;
             justify-content: center;
-            gap: 3rem;
+            gap: 2rem;
             margin-top: 2.5rem;
             flex-wrap: wrap;
             text-align: center;
@@ -386,8 +428,8 @@
             font-size: 1.8rem;
             color: #b45f4b;
             background: white;
-            width: 60px;
-            height: 60px;
+            width: 55px;
+            height: 55px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -402,8 +444,8 @@
             left: 30px;
             background-color: #b45f4b;
             color: white;
-            width: 70px;
-            height: 70px;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -414,28 +456,11 @@
             transition: all 0.3s ease;
             z-index: 100;
             border: 3px solid white;
-            position: fixed;
         }
 
         .cart-toggle:hover {
             transform: scale(1.1);
             background-color: #9a4f3d;
-        }
-
-        .cart-count {
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            background: #25D366;
-            color: white;
-            border-radius: 50%;
-            width: 25px;
-            height: 25px;
-            font-size: 0.8rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
         }
 
         .cart-sidebar {
@@ -507,13 +532,13 @@
 
         .cart-item-price {
             color: #b45f4b;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .cart-item-controls {
             display: flex;
             align-items: center;
-            gap: 0.8rem;
+            gap: 0.5rem;
         }
 
         .cart-item-controls button {
@@ -532,12 +557,13 @@
             color: white;
         }
 
-        .cart-item-remove {
-            background: none;
-            border: none;
-            color: #b45f4b;
-            cursor: pointer;
-            font-size: 1.2rem;
+        .cart-item-controls input {
+            width: 50px;
+            text-align: center;
+            border: 1px solid #f0d9cc;
+            border-radius: 2rem;
+            padding: 0.3rem;
+            font-family: 'Inter', sans-serif;
         }
 
         .cart-footer {
@@ -564,11 +590,12 @@
             background: #fff1e8;
             border: 1px solid #b45f4b;
             color: #b45f4b;
-            padding: 0.5rem 1rem;
+            padding: 0.6rem;
             border-radius: 2rem;
             cursor: pointer;
             width: 100%;
             font-weight: 600;
+            margin-bottom: 0.8rem;
         }
 
         .cart-checkout {
@@ -579,24 +606,23 @@
             border-radius: 2rem;
             cursor: pointer;
             width: 100%;
-            margin-top: 0.8rem;
             font-weight: 600;
         }
 
-        /* BOTONES FLOTANTES */
+        /* WHATSAPP */
         .whatsapp-btn {
             position: fixed;
             bottom: 30px;
             right: 30px;
             background-color: #25D366;
             color: white;
-            width: 70px;
-            height: 70px;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
             cursor: pointer;
             transition: all 0.3s ease;
@@ -626,35 +652,20 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             color: #f2ded3;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             transition: all 0.3s ease;
             text-decoration: none;
-            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .social-icon:hover {
             transform: translateY(-5px);
             background-color: #b45f4b;
             color: white;
-            border-color: transparent;
-            box-shadow: 0 10px 20px rgba(180, 95, 75, 0.4);
-        }
-
-        .social-icon.facebook:hover {
-            background-color: #1877f2;
-        }
-
-        .social-icon.instagram:hover {
-            background: linear-gradient(45deg, #f09433, #d62976, #962fbf, #4f5bd5);
-        }
-
-        .social-icon.tiktok:hover {
-            background-color: #000000;
         }
 
         footer {
@@ -688,56 +699,87 @@
             scroll-margin-top: 100px;
         }
 
-        @media (max-width: 700px) {
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
             header {
                 flex-direction: column;
-                gap: 0.5rem;
+                gap: 1rem;
+                padding: 1rem;
+            }
+            .header-right {
+                gap: 1rem;
             }
             .nav-links {
-                gap: 1.5rem;
+                gap: 1.2rem;
             }
             .hero {
-                min-height: 60vh;
+                min-height: 50vh;
+            }
+            .hero-content p {
+                font-size: 1.2rem;
             }
             .about-section {
-                padding: 2rem;
+                padding: 1.5rem;
             }
             .form-row {
                 grid-template-columns: 1fr;
             }
             .contact-form {
-                padding: 2rem 1.5rem;
+                padding: 1.5rem;
             }
-            .whatsapp-btn {
-                width: 60px;
-                height: 60px;
-                font-size: 2rem;
-                bottom: 20px;
-                right: 20px;
-            }
-            .cart-toggle {
-                width: 60px;
-                height: 60px;
+            .whatsapp-btn, .cart-toggle {
+                width: 55px;
+                height: 55px;
                 font-size: 1.5rem;
-                bottom: 20px;
-                left: 20px;
+            }
+            .cart-sidebar {
+                width: 100%;
+                right: -100%;
+            }
+            .grid-cards {
+                gap: 1rem;
+            }
+            .card-img {
+                height: 180px;
+            }
+            .card-content h3 {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+            .price-cart-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .cart-controls {
+                align-self: flex-end;
             }
         }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
         <div class="logo">Karam's</div>
-        <nav class="nav-links">
-            <a href="#inicio">Inicio</a>
-            <a href="#dulces">Dulces</a>
-            <a href="#nosotros">Nosotros</a>
-            <a href="#contacto">Contacto</a>
-        </nav>
+        <div class="header-right">
+            <div class="header-cart" id="cart-header-toggle">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-count-badge" id="header-cart-count">0</span>
+            </div>
+            <nav class="nav-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#dulces">Dulces</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+        </div>
     </header>
 
     <section id="inicio" class="hero">
@@ -752,9 +794,7 @@
         <section id="dulces">
             <h2 class="section-title">Nuestros clásicos</h2>
             <p class="section-sub">Hechos a mano con los mejores ingredientes</p>
-            <div class="grid-cards" id="products-container">
-                <!-- Las cards se generarán con JavaScript para mantener el código limpio -->
-            </div>
+            <div class="grid-cards" id="products-container"></div>
         </section>
 
         <section id="nosotros" class="about-section">
@@ -762,7 +802,7 @@
                 <h2>La Delicia Hecha Nombre</h2>
                 <p>En Karam's cada receta tiene historia. Usamos chocolate venezolano, frutas frescas y mucha pasión para crear dulces que alegran el día. Nuestro obrador está en tres esquinas, y puedes visitarnos o pedir online.</p>
             </div>
-            <div class="about-img" style="background-image: url('img/logo.jpeg');"></div>
+            <div class="about-img"></div>
         </section>
 
         <section id="contacto" class="contact-section">
@@ -820,18 +860,17 @@
         </section>
     </main>
 
-    <!-- Botón flotante del carrito -->
+    <!-- Botón flotante del carrito (izquierda) -->
     <div class="cart-toggle" id="cart-toggle">
         <i class="fas fa-shopping-bag"></i>
-        <span class="cart-count" id="cart-count">0</span>
+        <span class="cart-count-badge" id="floating-cart-count" style="position: absolute; top: -5px; right: -5px;">0</span>
     </div>
 
-    <!-- Botón flotante de WhatsApp -->
-    <a href="https://wa.me/584262222885?text=¡Hola!%20Quiero%20consultar%20por%20los%20dulces" 
+    <!-- Botón flotante de WhatsApp (derecha) -->
+    <a href="https://wa.me/584262222885?text=¡Hola!%20Quiero%20consultar%20por%20los%20dulces%20de%20Karam's" 
        class="whatsapp-btn" 
        target="_blank" 
-       rel="noopener noreferrer"
-       aria-label="Contactar por WhatsApp">
+       rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -858,15 +897,7 @@
         <div class="logo" style="color: #f2ded3;">Karam's</div>
         <div class="social-footer">
             <div class="social-icons">
-                <a href="#" target="_blank" class="social-icon facebook" aria-label="Facebook">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="#" target="_blank" class="social-icon instagram" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://www.tiktok.com/@karams.oficial?_r=1&_t=ZS-94gb0noCbp7" target="_blank" rel="noopener noreferrer" class="social-icon tiktok" aria-label="TikTok">
-                    <i class="fab fa-tiktok"></i>
-                </a>
+                <a href="https://www.tiktok.com/@karams.oficial" class="social-icon"><i class="fab fa-tiktok"></i></a>
             </div>
         </div>
         <div class="footer-links">
@@ -879,143 +910,100 @@
     </footer>
 
     <script>
-                // Lista de productos
+        // Lista de productos
         const productos = [
-            { id: 1, nombre: "Gelatina Mosaico", descripcion: "Gelatina Y Leche condensada.", precio: 2.5, imagen: "img/gelatina.jpg.jpeg" },
-            { id: 2, nombre: "Ponques", descripcion: "Simples, con Nevado y de Fruta.", precio: 2.0, imagen: "img/cup.jpg.jpeg", precioTexto: "8 x 2 $" },
-            { id: 3, nombre: "Torta Tradicional", descripcion: "Bizcocho tradicional con decoracion simple.", precio: 15, imagen: "img/pastel.jpg.jpeg" },
-            { id: 4, nombre: "Torta Fria", descripcion: "Tres Leches, Chantilly y Frutas.", precio: 15, imagen: "img/torta.jpg.jpeg" },
+            { id: 1, nombre: "Gelatina Mosaico", descripcion: "Gelatina con leche condensada, colores y sabores.", precio: 2.5, imagen: "img/gelatina.jpg.jpeg" },
+            { id: 2, nombre: "Ponques", descripcion: "Simples, con nevado o de fruta. Esponjosos y deliciosos.", precio: 2.0, imagen: "img/cup.jpg.jpeg", precioTexto: "8 x 2$" },
+            { id: 3, nombre: "Torta Tradicional", descripcion: "Bizcocho tradicional con decoración sencilla y casera.", precio: 15, imagen: "img/pastel.jpg.jpeg" },
+            { id: 4, nombre: "Torta Fría", descripcion: "Tres leches, chantilly y frutas frescas.", precio: 15, imagen: "img/torta.jpg.jpeg" },
             { id: 5, nombre: "Mini Donas", descripcion: "Con arequipe y chispas de tu preferencia.", precio: 2.0, imagen: "img/donas.jpg.jpeg", precioTexto: "8 x 2$" },
-            { id: 6, nombre: "Torta Tres Leches", descripcion: "Tres Leches, Chantilly y Canela Molida.", precio: 5, imagen: "img/tresleches.jpg.jpeg" },
-            { id: 7, nombre: "Helado Casero", descripcion: "chocolate, Vainilla, Oreo y Cafe.", precio: 20, imagen: "img/helado.jpg.jpeg" },
-            { id: 8, nombre: "Marquesa", descripcion: "Torta de galleta y Pudin.", precio: 25, imagen: "img/marquesa.jpg.jpeg" }
+            { id: 6, nombre: "Torta Tres Leches", descripcion: "Tres leches, chantilly y canela molida.", precio: 5, imagen: "img/tresleches.jpg.jpeg" },
+            { id: 7, nombre: "Helado Casero", descripcion: "Chocolate, vainilla, oreo y café.", precio: 20, imagen: "img/helado.jpg.jpeg" },
+            { id: 8, nombre: "Marquesa", descripcion: "Torta de galleta y pudín. Cremosa y deliciosa.", precio: 25, imagen: "img/marquesa.jpg.jpeg" }
         ];
 
-        // Carrito (almacenado en localStorage)
+        // Cargar carrito desde localStorage
         let cart = JSON.parse(localStorage.getItem('karamsCart')) || {};
 
-        // Función para guardar carrito
+        // Guardar carrito y actualizar toda la UI
         function saveCart() {
             localStorage.setItem('karamsCart', JSON.stringify(cart));
-            updateCartUI();
-            updateProductCounters();
+            updateAll();
         }
 
-        // Actualizar contadores en las cards
-        function updateProductCounters() {
+        // Actualizar todo (cards, carrito, contadores)
+        function updateAll() {
+            updateCardsQuantities();
+            renderCartItems();
+            updateCartCounters();
+        }
+
+        // Actualizar las cantidades mostradas en las cards
+        function updateCardsQuantities() {
             document.querySelectorAll('.card').forEach(card => {
                 const id = parseInt(card.dataset.id);
-                const qtyDisplay = card.querySelector('.qty-display');
-                if (qtyDisplay) {
-                    qtyDisplay.textContent = cart[id] || 0;
-                }
+                const input = card.querySelector('.qty-input');
+                if (input) input.value = cart[id] || 0;
             });
-            const totalItems = Object.values(cart).reduce((a, b) => a + b, 0);
-            document.getElementById('cart-count').textContent = totalItems;
         }
 
-        // Agregar al carrito
-        function addToCart(productId) {
-            cart[productId] = (cart[productId] || 0) + 1;
+        // Actualizar contadores del header y botón flotante
+        function updateCartCounters() {
+            const total = Object.values(cart).reduce((a, b) => a + b, 0);
+            const headerCount = document.getElementById('header-cart-count');
+            const floatingCount = document.getElementById('floating-cart-count');
+            if (headerCount) headerCount.textContent = total;
+            if (floatingCount) floatingCount.textContent = total;
+        }
+
+        // Establecer cantidad de un producto
+        function setQuantity(id, cantidad) {
+            let val = parseInt(cantidad);
+            if (isNaN(val) || val <= 0) {
+                delete cart[id];
+            } else {
+                cart[id] = val;
+            }
             saveCart();
         }
 
-        // Quitar del carrito
-        function removeFromCart(productId) {
-            if (cart[productId] > 0) {
-                cart[productId]--;
-                if (cart[productId] === 0) delete cart[productId];
+        // Aumentar cantidad
+        function addToCart(id) {
+            cart[id] = (cart[id] || 0) + 1;
+            saveCart();
+        }
+
+        // Disminuir cantidad
+        function removeFromCart(id) {
+            if (cart[id] && cart[id] > 0) {
+                cart[id]--;
+                if (cart[id] === 0) delete cart[id];
                 saveCart();
             }
         }
 
-        // Actualizar UI del carrito lateral
-        function updateCartUI() {
-            const cartItemsDiv = document.getElementById('cart-items');
-            const cartTotalSpan = document.getElementById('cart-total');
-            
-            if (Object.keys(cart).length === 0) {
-                cartItemsDiv.innerHTML = '<div class="cart-empty">🛒 Tu carrito está vacío</div>';
-                cartTotalSpan.textContent = '$0.00';
-                return;
-            }
-
-            let total = 0;
-            let itemsHtml = '';
-            
-            for (const [idStr, cantidad] of Object.entries(cart)) {
-                const id = parseInt(idStr);
-                const producto = productos.find(p => p.id === id);
-                if (producto) {
-                    const subtotal = producto.precio * cantidad;
-                    total += subtotal;
-                    itemsHtml += `
-                        <div class="cart-item">
-                            <div class="cart-item-info">
-                                <div class="cart-item-title">${producto.nombre}</div>
-                                <div class="cart-item-price">$${producto.precio} c/u</div>
-                            </div>
-                            <div class="cart-item-controls">
-                                <button class="cart-qty-minus" data-id="${id}">-</button>
-                                <span>${cantidad}</span>
-                                <button class="cart-qty-plus" data-id="${id}">+</button>
-                                <button class="cart-item-remove" data-id="${id}">🗑️</button>
-                            </div>
-                        </div>
-                    `;
-                }
-            }
-            
-            cartItemsDiv.innerHTML = itemsHtml;
-            cartTotalSpan.textContent = `$${total.toFixed(2)}`;
-            document.getElementById('cart-count').textContent = Object.values(cart).reduce((a, b) => a + b, 0);
-            
-            // Agregar event listeners a los botones del carrito (para evitar propagación)
-            document.querySelectorAll('.cart-qty-minus').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    const id = parseInt(btn.dataset.id);
-                    removeFromCart(id);
-                });
-            });
-            
-            document.querySelectorAll('.cart-qty-plus').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    const id = parseInt(btn.dataset.id);
-                    addToCart(id);
-                });
-            });
-            
-            document.querySelectorAll('.cart-item-remove').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    const id = parseInt(btn.dataset.id);
-                    delete cart[id];
-                    saveCart();
-                });
-            });
-        }
-
-        // Vaciar carrito
-        function clearCart() {
-            cart = {};
+        // Eliminar producto completo del carrito
+        function deleteFromCart(id) {
+            delete cart[id];
             saveCart();
         }
 
-        // Finalizar pedido
+        // Vaciar carrito completo
+        function clearCart() {
+            if (confirm('¿Vaciar todo el carrito?')) {
+                cart = {};
+                saveCart();
+            }
+        }
+
+        // Finalizar pedido (WhatsApp)
         function checkout() {
             if (Object.keys(cart).length === 0) {
                 alert('🛒 Tu carrito está vacío. Agrega algunos dulces primero.');
                 return;
             }
-            const mensaje = generateWhatsAppMessage();
-            window.open(`https://wa.me/584262222885?text=${encodeURIComponent(mensaje)}`, '_blank');
-        }
-
-        // Generar mensaje de WhatsApp con el pedido
-        function generateWhatsAppMessage() {
-            let mensaje = "🍰 *Pedido Karam's* 🍰%0A%0A";
+            
+            let mensaje = "🍰 *Pedido Karam's* 🍰";
             let total = 0;
             
             for (const [idStr, cantidad] of Object.entries(cart)) {
@@ -1023,95 +1011,158 @@
                 if (producto && cantidad > 0) {
                     const subtotal = producto.precio * cantidad;
                     total += subtotal;
-                    mensaje += `• ${cantidad}x ${producto.nombre} - $${subtotal.toFixed(2)}%0A`;
+                    mensaje += `• ${cantidad}x ${producto.nombre} - $${subtotal.toFixed(2)}`;
                 }
             }
             
-            mensaje += `%0A*Total: $${total.toFixed(2)}*%0A%0A`;
+            mensaje += `*Total: $${total.toFixed(2)}*`;
             mensaje += `¡Gracias por tu pedido! 🧁`;
-            return mensaje;
+            
+            window.open(`https://wa.me/584262222885?text=${encodeURIComponent(mensaje)}`, '_blank');
         }
 
-        // Renderizar productos en el DOM
+        // Renderizar los items del carrito lateral
+        function renderCartItems() {
+            const container = document.getElementById('cart-items');
+            const totalSpan = document.getElementById('cart-total');
+            
+            if (Object.keys(cart).length === 0) {
+                container.innerHTML = '<div class="cart-empty">🛒 Tu carrito está vacío</div>';
+                totalSpan.textContent = '$0.00';
+                return;
+            }
+
+            let total = 0;
+            let html = '';
+            
+            for (const [idStr, cantidad] of Object.entries(cart)) {
+                const id = parseInt(idStr);
+                const p = productos.find(x => x.id === id);
+                if (p) {
+                    const subtotal = p.precio * cantidad;
+                    total += subtotal;
+                    html += `
+                        <div class="cart-item">
+                            <div class="cart-item-info">
+                                <div class="cart-item-title">${p.nombre}</div>
+                                <div class="cart-item-price">$${p.precio.toFixed(2)} c/u</div>
+                            </div>
+                            <div class="cart-item-controls">
+                                <button class="cart-minus" data-id="${id}">-</button>
+                                <input type="number" class="cart-input" data-id="${id}" value="${cantidad}" min="0" step="1">
+                                <button class="cart-plus" data-id="${id}">+</button>
+                                <button class="cart-delete" data-id="${id}">🗑️</button>
+                            </div>
+                        </div>
+                    `;
+                }
+            }
+            
+            container.innerHTML = html;
+            totalSpan.textContent = `$${total.toFixed(2)}`;
+            
+            // Event listeners del carrito
+            document.querySelectorAll('.cart-minus').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    removeFromCart(parseInt(btn.dataset.id));
+                });
+            });
+            document.querySelectorAll('.cart-plus').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    addToCart(parseInt(btn.dataset.id));
+                });
+            });
+            document.querySelectorAll('.cart-input').forEach(inp => {
+                inp.addEventListener('change', (e) => {
+                    e.stopPropagation();
+                    setQuantity(parseInt(inp.dataset.id), inp.value);
+                });
+            });
+            document.querySelectorAll('.cart-delete').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    deleteFromCart(parseInt(btn.dataset.id));
+                });
+            });
+        }
+
+        // Renderizar todos los productos en el grid
         function renderProducts() {
             const container = document.getElementById('products-container');
-            container.innerHTML = productos.map(producto => `
-                <div class="card" data-id="${producto.id}" data-nombre="${producto.nombre}" data-precio="${producto.precio}">
-                    <div class="card-img" style="background-image: url('${producto.imagen}');"></div>
+            container.innerHTML = productos.map(p => `
+                <div class="card" data-id="${p.id}">
+                    <div class="card-img" style="background-image: url('${p.imagen}'); background-size: cover; background-position: center;"></div>
                     <div class="card-content">
-                        <h3>${producto.nombre}</h3>
-                        <p>${producto.descripcion}</p>
+                        <h3>${p.nombre}</h3>
+                        <p>${p.descripcion}</p>
                         <div class="price-cart-row">
-                            <span class="precio">${producto.precioTexto ? producto.precioTexto : '$' + producto.precio}</span>
+                            <span class="precio">${p.precioTexto ? p.precioTexto : '$' + p.precio.toFixed(2)}</span>
                             <div class="cart-controls">
-                                <button class="qty-btn minus" data-id="${producto.id}">-</button>
-                                <span class="qty-display">${cart[producto.id] || 0}</span>
-                                <button class="qty-btn plus" data-id="${producto.id}">+</button>
+                                <button class="qty-btn minus" data-id="${p.id}">-</button>
+                                <input type="number" class="qty-input" data-id="${p.id}" value="${cart[p.id] || 0}" min="0" step="1">
+                                <button class="qty-btn plus" data-id="${p.id}">+</button>
                             </div>
                         </div>
                     </div>
                 </div>
             `).join('');
             
-            // Agregar event listeners a los botones de las cards
-            document.querySelectorAll('.plus').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    const id = parseInt(btn.dataset.id);
-                    addToCart(id);
-                });
-            });
-            
+            // Event listeners de las cards
             document.querySelectorAll('.minus').forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     e.stopPropagation();
-                    const id = parseInt(btn.dataset.id);
-                    removeFromCart(id);
+                    removeFromCart(parseInt(btn.dataset.id));
+                });
+            });
+            document.querySelectorAll('.plus').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    addToCart(parseInt(btn.dataset.id));
+                });
+            });
+            document.querySelectorAll('.qty-input').forEach(inp => {
+                inp.addEventListener('change', (e) => {
+                    e.stopPropagation();
+                    setQuantity(parseInt(inp.dataset.id), inp.value);
                 });
             });
         }
-        
-        // Toggle del carrito lateral
+
+        // Abrir/cerrar carrito lateral
         function toggleCart() {
             document.getElementById('cart-sidebar').classList.toggle('open');
         }
-        
-        // Eventos e inicialización
+
+        // Inicialización
         document.addEventListener('DOMContentLoaded', () => {
             renderProducts();
-            updateProductCounters();
+            updateCardsQuantities();
+            updateCartCounters();
             
+            // Botones para abrir carrito
             document.getElementById('cart-toggle').addEventListener('click', toggleCart);
+            document.getElementById('cart-header-toggle').addEventListener('click', toggleCart);
             document.getElementById('cart-close').addEventListener('click', toggleCart);
-            document.getElementById('cart-clear').addEventListener('click', () => {
-                if (confirm('¿Vaciar todo el carrito?')) {
-                    clearCart();
-                }
-            });
+            
+            // Botones del footer del carrito
+            document.getElementById('cart-clear').addEventListener('click', clearCart);
             document.getElementById('cart-checkout').addEventListener('click', checkout);
             
-            // Cerrar carrito SOLO cuando se hace clic FUERA del carrito y FUERA del botón toggle
+            // Cerrar carrito al hacer clic fuera
             document.addEventListener('click', (e) => {
                 const sidebar = document.getElementById('cart-sidebar');
                 const toggle = document.getElementById('cart-toggle');
+                const headerToggle = document.getElementById('cart-header-toggle');
                 const isClickInsideCart = sidebar.contains(e.target);
-                const isClickOnToggle = toggle.contains(e.target);
-                const isClickInsideCartButton = e.target.closest('.cart-item-controls') !== null;
+                const isClickOnToggle = toggle.contains(e.target) || headerToggle.contains(e.target);
                 
-                // Solo cerrar si el clic NO es dentro del carrito, NO es en el toggle, y NO es en los botones del carrito
-                if (sidebar.classList.contains('open') && 
-                    !isClickInsideCart && 
-                    !isClickOnToggle && 
-                    !isClickInsideCartButton) {
+                if (sidebar.classList.contains('open') && !isClickInsideCart && !isClickOnToggle) {
                     sidebar.classList.remove('open');
                 }
             });
         });
-        
-        // Exponer funciones globalmente para los botones dinámicos
-        window.addToCart = addToCart;
-        window.removeFromCart = removeFromCart;
-        window.clearCart = clearCart;
     </script>
 </body>
 </html>
